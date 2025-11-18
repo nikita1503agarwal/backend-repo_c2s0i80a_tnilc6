@@ -12,15 +12,42 @@ Model name is converted to lowercase for the collection name:
 """
 
 from pydantic import BaseModel, Field
-from typing import Optional
+from typing import Optional, Literal
+from datetime import date
 
-# Example schemas (replace with your own):
+# HVAC-focused schemas
+
+class CampaignMetric(BaseModel):
+    """
+    HVAC AI campaign performance metrics
+    Collection name: "campaignmetric"
+    """
+    channel: Literal["inbound", "outbound"] = Field(..., description="Channel type")
+    date: date = Field(..., description="Metric date (UTC)")
+
+    # Core funnel metrics
+    leads_generated: int = Field(0, ge=0)
+    calls_handled: int = Field(0, ge=0)
+    conversations: int = Field(0, ge=0)
+    booked_jobs: int = Field(0, ge=0)
+    completed_jobs: int = Field(0, ge=0)
+
+    # Performance
+    response_time_sec: float = Field(0, ge=0, description="Average first-response time in seconds")
+    conversion_rate: float = Field(0, ge=0, le=1, description="Lead → booked conversion rate (0-1)")
+    appt_set_rate: float = Field(0, ge=0, le=1, description="Conversations → appointments set (0-1)")
+    no_show_rate: float = Field(0, ge=0, le=1)
+
+    # Financials
+    aov: float = Field(0, ge=0, description="Average order value")
+    revenue: float = Field(0, ge=0)
+    cost: float = Field(0, ge=0)
+    roi: float = Field(0, description="Return on investment multiplier, e.g. 3.2 = 320%")
+
+    # Quality
+    csat: float = Field(0, ge=0, le=5, description="Customer satisfaction (1-5)")
 
 class User(BaseModel):
-    """
-    Users collection schema
-    Collection name: "user" (lowercase of class name)
-    """
     name: str = Field(..., description="Full name")
     email: str = Field(..., description="Email address")
     address: str = Field(..., description="Address")
@@ -28,21 +55,8 @@ class User(BaseModel):
     is_active: bool = Field(True, description="Whether user is active")
 
 class Product(BaseModel):
-    """
-    Products collection schema
-    Collection name: "product" (lowercase of class name)
-    """
     title: str = Field(..., description="Product title")
     description: Optional[str] = Field(None, description="Product description")
     price: float = Field(..., ge=0, description="Price in dollars")
     category: str = Field(..., description="Product category")
     in_stock: bool = Field(True, description="Whether product is in stock")
-
-# Add your own schemas here:
-# --------------------------------------------------
-
-# Note: The Flames database viewer will automatically:
-# 1. Read these schemas from GET /schema endpoint
-# 2. Use them for document validation when creating/editing
-# 3. Handle all database operations (CRUD) directly
-# 4. You don't need to create any database endpoints!
