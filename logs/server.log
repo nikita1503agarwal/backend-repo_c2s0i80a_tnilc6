@@ -1,21 +1,38 @@
 INFO:     Will watch for changes in these directories: ['/home/workspace']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [152] using StatReload
-INFO:     Started server process [154]
+INFO:     Started reloader process [245] using StatReload
+INFO:     Started server process [247]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     172.20.0.1:50334 - "HEAD / HTTP/1.1" 405 Method Not Allowed
-INFO:     172.20.0.1:56966 - "GET /api/metrics/summary HTTP/1.1" 200 OK
-INFO:     172.20.0.1:56976 - "GET /api/metrics/summary HTTP/1.1" 200 OK
-INFO:     172.20.0.1:56966 - "GET /api/metrics/timeseries HTTP/1.1" 200 OK
-INFO:     172.20.0.1:56982 - "GET / HTTP/1.1" 200 OK
-INFO:     172.20.0.1:56976 - "GET /api/metrics/timeseries HTTP/1.1" 200 OK
-INFO:     172.20.0.1:56982 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     172.20.0.1:58044 - "GET /api/metrics/summary HTTP/1.1" 200 OK
-INFO:     172.20.0.1:58048 - "GET /api/metrics/summary HTTP/1.1" 200 OK
-INFO:     172.20.0.1:58044 - "GET /api/metrics/timeseries HTTP/1.1" 200 OK
-INFO:     172.20.0.1:58048 - "GET /api/metrics/timeseries HTTP/1.1" 200 OK
-INFO:     172.20.0.1:49668 - "GET /api/metrics/summary HTTP/1.1" 200 OK
-INFO:     172.20.0.1:49668 - "GET /api/metrics/timeseries HTTP/1.1" 200 OK
-INFO:     172.20.0.1:49670 - "GET /api/metrics/summary HTTP/1.1" 200 OK
-INFO:     172.20.0.1:49670 - "GET /api/metrics/timeseries HTTP/1.1" 200 OK
+INFO:     172.20.0.1:43902 - "HEAD / HTTP/1.1" 405 Method Not Allowed
+INFO:     172.20.0.1:43906 - "GET /api/metrics/summary HTTP/1.1" 200 OK
+INFO:     172.20.0.1:45832 - "GET /api/metrics/summary HTTP/1.1" 200 OK
+INFO:     172.20.0.1:45818 - "GET /api/metrics/summary HTTP/1.1" 200 OK
+INFO:     172.20.0.1:43922 - "GET /api/contacts HTTP/1.1" 200 OK
+INFO:     172.20.0.1:45858 - "GET /api/metrics/summary HTTP/1.1" 200 OK
+INFO:     172.20.0.1:45832 - "GET /api/metrics/timeseries HTTP/1.1" 200 OK
+INFO:     172.20.0.1:45842 - "GET /api/contacts HTTP/1.1" 200 OK
+INFO:     172.20.0.1:45818 - "GET /api/contacts HTTP/1.1" 200 OK
+INFO:     172.20.0.1:45858 - "GET /api/metrics/timeseries HTTP/1.1" 200 OK
+INFO:     172.20.0.1:43906 - "GET /api/metrics/timeseries HTTP/1.1" 200 OK
+INFO:     172.20.0.1:45832 - "GET /api/contacts HTTP/1.1" 200 OK
+INFO:     172.20.0.1:45818 - "GET /api/metrics/timeseries HTTP/1.1" 200 OK
+INFO:     172.20.0.1:49494 - "GET /api/contacts HTTP/1.1" 200 OK
+INFO:     172.20.0.1:49482 - "GET /api/metrics/summary HTTP/1.1" 200 OK
+INFO:     172.20.0.1:49496 - "GET /api/contacts HTTP/1.1" 200 OK
+INFO:     172.20.0.1:49482 - "GET /api/metrics/timeseries HTTP/1.1" 200 OK
+INFO:     172.20.0.1:49494 - "GET /api/metrics/summary HTTP/1.1" 200 OK
+INFO:     172.20.0.1:49494 - "GET /api/metrics/timeseries HTTP/1.1" 200 OK
+INFO:     172.20.0.1:44988 - "OPTIONS /api/contacts/691caa3584ba60ec9b5d8db0/stage HTTP/1.1" 200 OK
+INFO:     172.20.0.1:44988 - "PATCH /api/contacts/691caa3584ba60ec9b5d8db0/stage HTTP/1.1" 200 OK
+INFO:     172.20.0.1:45004 - "PATCH /api/contacts/691caa3584ba60ec9b5d8db0/stage HTTP/1.1" 200 OK
+INFO:     172.20.0.1:36186 - "GET /api/contacts/691caa3584ba60ec9b5d8dad/conversation HTTP/1.1" 200 OK
+INFO:     172.20.0.1:36186 - "GET /api/contacts/691caa3584ba60ec9b5d8daf/conversation HTTP/1.1" 200 OK
+INFO:     172.20.0.1:36186 - "GET /api/contacts/691caa3584ba60ec9b5d8dae/conversation HTTP/1.1" 200 OK
+INFO:     172.20.0.1:36186 - "GET /api/contacts/691caa3584ba60ec9b5d8daf/conversation HTTP/1.1" 200 OK
+INFO:     172.20.0.1:36190 - "GET /api/contacts/691caa3584ba60ec9b5d8db0/conversation HTTP/1.1" 200 OK
+INFO:     172.20.0.1:36190 - "GET /api/contacts/691caa3584ba60ec9b5d8dac/conversation HTTP/1.1" 200 OK
+INFO:     172.20.0.1:43510 - "GET /api/contacts/691caa3584ba60ec9b5d8dad/conversation HTTP/1.1" 200 OK
+INFO:     172.20.0.1:43510 - "GET /api/contacts/691caa3584ba60ec9b5d8dac/conversation HTTP/1.1" 200 OK
+INFO:     172.20.0.1:43510 - "GET /api/contacts/691caa3584ba60ec9b5d8dad/conversation HTTP/1.1" 200 OK
+INFO:     172.20.0.1:43510 - "GET /api/contacts/691caa3584ba60ec9b5d8dae/conversation HTTP/1.1" 200 OK

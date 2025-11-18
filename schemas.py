@@ -12,8 +12,8 @@ Model name is converted to lowercase for the collection name:
 """
 
 from pydantic import BaseModel, Field
-from typing import Optional, Literal
-from datetime import date
+from typing import Optional, Literal, List
+from datetime import date, datetime
 
 # HVAC-focused schemas
 
@@ -46,6 +46,30 @@ class CampaignMetric(BaseModel):
 
     # Quality
     csat: float = Field(0, ge=0, le=5, description="Customer satisfaction (1-5)")
+
+class Contact(BaseModel):
+    """
+    Individual prospect/customer in the campaign pipeline
+    Collection: "contact"
+    """
+    name: str
+    phone: str
+    channel: Literal["inbound", "outbound"]
+    stage: Literal["new", "engaged", "qualified", "booked", "completed"] = "new"
+    last_activity_at: Optional[datetime] = None
+
+class ConversationMessage(BaseModel):
+    """
+    Messages and call logs tied to a contact
+    Collection: "conversationmessage"
+    """
+    contact_id: str
+    type: Literal["sms", "call"]
+    direction: Literal["inbound", "outbound"]
+    timestamp: datetime
+    text: Optional[str] = None
+    recording_url: Optional[str] = None
+    duration_sec: Optional[int] = None
 
 class User(BaseModel):
     name: str = Field(..., description="Full name")
